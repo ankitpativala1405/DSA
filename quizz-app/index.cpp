@@ -7,6 +7,16 @@ struct Question {
     char correctAnswer;
 };
 
+void color(const string &text, const string &color) {
+    if (color == "green") {
+        cout << "\033[1;32m" << text << "\033[0m";  
+    } else if (color == "red") {
+        cout << "\033[1;31m" << text << "\033[0m"; 
+    } else {
+        cout << text; 
+    }
+}
+
 void ask(Question q, int &score) {
     char answer;
     cout << q.questionText << endl;
@@ -15,15 +25,20 @@ void ask(Question q, int &score) {
     }
     cout << "Your answer: ";
     cin >> answer;
+    
     if (toupper(answer) == q.correctAnswer) {
-        score++;
+        color("Correct!\n", "green");
+        score++;  
+    } else {
+        color("Incorrect! The correct answer is: ", "red");
+        cout << q.correctAnswer << endl;  
     }
 }
 
 void add(Question quiz[], int &questionCount) {
     Question newQuestion;
     cout << "Enter the question: ";
-    cin.ignore();  // to clear the buffer
+    cin.ignore();  
     getline(cin, newQuestion.questionText);
     
     for (int i = 0; i < 4; ++i) {
