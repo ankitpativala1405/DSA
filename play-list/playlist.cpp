@@ -35,8 +35,6 @@ void addsongBeginning(string title)
     cout << title << "added to Playlist.\n";
 }
 
-
-
 // Add Song at End
 
 void addSong(string title)
@@ -62,8 +60,6 @@ void addSong(string title)
     cout << title << "added to Playlist.\n";
 }
 
-
-
 // Display playlist
 
 void Display()
@@ -87,18 +83,6 @@ void Display()
     } while (temp != nullptr && temp != head);
 }
 
-// function for action
-
-// void action(title)
-// {
-//     int choice;
-
-//     if (choice == 1)
-//     {
-//         addsongBeginning(title);
-//     }
-// }
-
 // main function
 
 int main()
@@ -113,7 +97,13 @@ int main()
         cout << "\n Music Playlist Menu:\n";
         cout << "1.Add Song at Beginning\n";
         cout << "2.Add Song at End\n";
-        cout << "3.Display Playlist\n\n";
+        cout << "3.Display Playlist\n";
+        cout << "4.Delete Song\n";
+        cout << "5.Move a song to top\n";
+        cout << "6.Create circuler Playlist\n";
+        cout << "7.Play Song x in circuler Playlist\n";
+        cout << "8.Cleanup Memory\n";
+
         cout << "Please Select Your Choise..";
         cin >> choice;
         cout << "Your Choise Is:"<< choice <<"\n\n";
@@ -136,7 +126,7 @@ int main()
             Display();
             break;
         case 4:
-            cout << "Take Another Choice!!!";
+            cout << "Enter Your Number You Want Delete Song...!!!";
             break;
         default:
             cout << "invalid choice , try again.\n";
